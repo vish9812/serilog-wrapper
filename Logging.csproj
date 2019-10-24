@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>SerilogWrapper_VishalChoudhary</PackageId>
+    <Authors>VishalChoudhary</Authors>
+    <Company />
+    <Product>SerilogWrapper</Product>
+    <Description>It's a simple wrapper to use Serilog</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/vishch/serilog-wrapper</RepositoryUrl>
+    <PackageTags>Logs, Logging, Logger, Serilog</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
