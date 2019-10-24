@@ -74,7 +74,7 @@ namespace Logging
                 new SqlColumn {ColumnName = nameof(LogDetail.UserName), DataType = SqlDbType.NVarChar, DataLength = 200},
                 new SqlColumn {ColumnName = nameof(LogDetail.Location), DataType = SqlDbType.NVarChar, DataLength = 500},
                 new SqlColumn {ColumnName = nameof(LogDetail.Hostname), DataType = SqlDbType.NVarChar, DataLength = 100},
-                new SqlColumn {ColumnName = nameof(LogDetail.SessionId), DataType = SqlDbType.VarChar, DataLength = 300},
+                new SqlColumn {ColumnName = nameof(LogDetail.SessionId), DataType = SqlDbType.VarChar, DataLength = 100},
                 new SqlColumn {ColumnName = nameof(LogDetail.CorrelationId), DataType = SqlDbType.VarChar, DataLength = 100},
                 new SqlColumn {ColumnName = nameof(LogDetail.AdditionalInfo), DataType = SqlDbType.NVarChar},
             };
