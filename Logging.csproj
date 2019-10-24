@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageId>SerilogWrapper_VishalChoudhary</PackageId>
+    <PackageId>SerilogWrapper</PackageId>
     <Authors>VishalChoudhary</Authors>
     <Company />
     <Product>SerilogWrapper</Product>
