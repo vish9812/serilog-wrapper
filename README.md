@@ -1,4 +1,6 @@
-# serilog-wrapper
+# Serilog Wrapper
+
+**Nuget-Package** : https://www.nuget.org/packages/SerilogWrapper/
 
 A simple wrapper for Serilog.
 
@@ -72,3 +74,5 @@ services.AddMvc(options =>
     options.Filters.Add<TrackPerformanceFilter>();
 })
 ```
+
+* To use any of the loggers directly, just inject the **ILogger**.
