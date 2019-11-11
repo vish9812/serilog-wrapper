@@ -64,11 +64,17 @@ namespace Logging.Models
                     var additionalInfo = new Dictionary<string, object>();
                     foreach (var key in cookies.Keys)
                     {
-                        additionalInfo.Add(key, cookies[key]);
+                        if (!additionalInfo.ContainsKey(key))
+                        {
+                            additionalInfo.Add(key, cookies[key]);
+                        }
                     }
                     if (additionalInfo.Count > 0)
                     {
-                        AdditionalInfoDictionary.Add("Cookies", additionalInfo);
+                        if (!AdditionalInfoDictionary.ContainsKey("Cookies"))
+                        {
+                            AdditionalInfoDictionary.Add("Cookies", additionalInfo);
+                        }
                     }
                 }
             }
@@ -103,11 +109,17 @@ namespace Logging.Models
                     var additionalInfo = new Dictionary<string, object>();
                     foreach (var key in session.Keys)
                     {
-                        additionalInfo.Add(key, session.Get<object>(key));
+                        if (!additionalInfo.ContainsKey(key))
+                        {
+                            additionalInfo.Add(key, session.Get<object>(key));
+                        }
                     }
                     if (additionalInfo.Count > 0)
                     {
-                        AdditionalInfoDictionary.Add("SessionData", additionalInfo);
+                        if (!AdditionalInfoDictionary.ContainsKey("SessionData"))
+                        {
+                            AdditionalInfoDictionary.Add("SessionData", additionalInfo);
+                        }
                     }
                 }
             }
@@ -123,8 +135,14 @@ namespace Logging.Models
 
                 if (!SkipAdditionalInfo(httpContext, skipAdditionalInfo))
                 {
-                    AdditionalInfoDictionary.Add("UserAgent", request.Headers["User-Agent"]);
-                    AdditionalInfoDictionary.Add("Languages", request.Headers["Accept-Language"]);
+                    if (!AdditionalInfoDictionary.ContainsKey("UserAgent"))
+                    {
+                        AdditionalInfoDictionary.Add("UserAgent", request.Headers["User-Agent"]);
+                    }
+                    if (!AdditionalInfoDictionary.ContainsKey("Languages"))
+                    {
+                        AdditionalInfoDictionary.Add("Languages", request.Headers["Accept-Language"]);
+                    }
 
                     var queries = Microsoft.AspNetCore.WebUtilities
                         .QueryHelpers.ParseQuery(request.QueryString.ToString());
@@ -133,11 +151,17 @@ namespace Logging.Models
 
                     foreach (var query in queries)
                     {
-                        additionalInfo.Add(query.Key, query.Value);
+                        if (!additionalInfo.ContainsKey(query.Key))
+                        {
+                            additionalInfo.Add(query.Key, query.Value);
+                        }
                     }
                     if (additionalInfo.Count > 0)
                     {
-                        AdditionalInfoDictionary.Add("QueryStrings", additionalInfo);
+                        if (!AdditionalInfoDictionary.ContainsKey("QueryStrings"))
+                        {
+                            AdditionalInfoDictionary.Add("QueryStrings", additionalInfo);
+                        }
                     }
                 }
             }
@@ -165,14 +189,20 @@ namespace Logging.Models
                     {
                         if (!SkipAdditionalInfo(httpContext, skipAdditionalInfo))
                         {
-                            additionalInfo.Add(claim.Type, claim.Value);
+                            if (!additionalInfo.ContainsKey(claim.Type))
+                            {
+                                additionalInfo.Add(claim.Type, claim.Value);
+                            }
                         }
                     }
                 }
 
                 if (additionalInfo.Count > 0)
                 {
-                    AdditionalInfoDictionary.Add("UserClaims", additionalInfo);
+                    if (!AdditionalInfoDictionary.ContainsKey("UserClaims"))
+                    {
+                        AdditionalInfoDictionary.Add("UserClaims", additionalInfo);
+                    }
                 }
             }
         }
