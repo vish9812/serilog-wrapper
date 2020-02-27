@@ -15,7 +15,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MessagePack" Version="1.7.3.4" />
+    <PackageReference Include="MessagePack" Version="1.9.11" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="3.0.0" />
