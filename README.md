@@ -1,7 +1,5 @@
 # Serilog Wrapper
 
-**Nuget-Package** : https://www.nuget.org/packages/SerilogWrapper/
-
 A simple wrapper for Serilog.
 
 It offers 5 types of logging
